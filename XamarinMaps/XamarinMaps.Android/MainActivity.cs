@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Essentials;
 
 namespace XamarinMaps.Droid
 {
@@ -19,7 +20,17 @@ namespace XamarinMaps.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Platform.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        {
+            Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
     }
+
 }

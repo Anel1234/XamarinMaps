@@ -9,6 +9,7 @@
         <Label Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+        <Button Clicked="GetLocation" Text="Get Location"></Button>
+        <Button Clicked="NavigateToBuilding25" Text="NavigateToBuilding25"></Button>
     </StackLayout>
-
 </ContentPage>
